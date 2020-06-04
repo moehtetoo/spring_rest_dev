@@ -1,7 +1,12 @@
 --- 
+workflows:
+  test-env-vars:
+    jobs:
+      - build:
+          context: spring_dev
+          
 jobs: 
-  build: 
-    context: spring_dev
+  build:
     docker: 
       - 
         image: "circleci/openjdk:8-jdk-browsers"
