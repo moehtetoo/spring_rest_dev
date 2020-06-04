@@ -1,6 +1,7 @@
 --- 
 jobs: 
   build: 
+    context:spring_dev
     docker: 
       - 
         image: "circleci/openjdk:8-jdk-browsers"
@@ -11,7 +12,7 @@ jobs:
         restore_cache: 
           key: "spring-rest-helloworld-{{ checksum \"pom.xml\" }}"
       - 
-        run: "mvn dependency:go- offline"
+        run: "mvn dependency:go-offline"
       - 
         save_cache: 
           key: "circleci-demo-java-spring-{{ checksum \"pom.xml\" }}"
