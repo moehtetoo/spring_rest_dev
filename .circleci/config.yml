@@ -38,7 +38,7 @@ jobs:
               cp target/*.war docker/app/
               docker login -u moehtetoo -p moehtetoo274211
               docker build --no-cache -t moehtetoo/spring_boot_devop:$(cat tempvers.txt) docker
-              docker push $moehtetoo/$spring_boot_devop:$(cat tempvers.txt)
+              docker push moehtetoo/spring_boot_devop:$(cat tempvers.txt)
           name: "Build application Docker image"
     working_directory: ~/spring-rest-helloworld
 version: 2
