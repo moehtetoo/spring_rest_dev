@@ -1,7 +1,6 @@
 --- 
 jobs: 
   build: 
-    context: spring_dev
     docker: 
       - 
         image: "circleci/openjdk:8-jdk-browsers"
