@@ -1,10 +1,5 @@
+---
 
-workflows:
-  test-env-vars:
-    jobs:
-      - build:
-          context: spring_dev
-          
 jobs: 
   build:
     docker: 
@@ -41,9 +36,9 @@ jobs:
         run: 
           command: |
               cp target/*.war docker/app/
-              docker login -u $DOCKER_USER -p $DOCKER_PASS
-              docker build --no-cache -t $DOCKER_USER/$CIRCLE_PROJECT_REPONAME:$(cat tempvers.txt) docker
-              docker push $DOCKER_USER/$CIRCLE_PROJECT_REPONAME:$(cat tempvers.txt)
+              docker login -u moehtetoo -p moehtetoo274211
+              docker build --no-cache -t moehtetoo/spring_boot_devop:$(cat tempvers.txt) docker
+              docker push $moehtetoo/$spring_boot_devop:$(cat tempvers.txt)
           name: "Build application Docker image"
     working_directory: ~/spring-rest-helloworld
 version: 2
